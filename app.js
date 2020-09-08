@@ -3,15 +3,14 @@ const { urlencoded } = require('body-parser');
 const bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	express = require('express'),
-	app = express(),
-	birthday = require('./views/script');
+	app = express();
 
 // APP CONFIG
 
 mongoose.connect('mongodb://localhost/bday_v3', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 // MONGOOSE/MODEL CONFIG
 
