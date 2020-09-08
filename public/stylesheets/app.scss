@@ -1,0 +1,365 @@
+// //COLOR VARIABLES
+// ====================================================================
+
+$black: #34435e;
+$white: #ffffff;
+
+// Gradients
+
+// ======================================================================
+// SHADOW STYLES
+
+// =========================================================================
+
+// FONTS
+
+$main-font: 'Montserrat', sans-serif;
+$titles-font: 'Righteous', cursive;
+
+// MAIN STYLES
+
+html {
+	scroll-behavior: smooth;
+	font-size: 15px;
+}
+
+body {
+	font-family: $main-font;
+}
+
+h3 {
+	text-align: center;
+	font-size: 3rem;
+	padding: 20px 0;
+}
+
+// NAVBAR
+.bg-custom {
+	background: #0f2027; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+	background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+// HEADER
+header {
+	font-family: $titles-font;
+	padding: 30px 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #0f2027; /* fallback for old browsers */
+	background-image: linear-gradient(
+			90deg,
+			rgba(44, 83, 100, 0.9) 37%,
+			rgba(32, 62, 75, 0.9) 96%,
+			rgba(32, 58, 67, 0.9) 100%
+		),
+		url(/images/confetti.png);
+	background-size: cover;
+	h1 {
+		text-align: center;
+		text-shadow: 1px 1px #7e8b8f1c;
+		font-size: 3.5rem; // border: 1px solid black;
+		background: #f0e8ce; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #ffffff, #faf3de);
+		/* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #ffffff, #f7eed3);
+		/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.name {
+		display: block;
+		font-size: 5rem;
+	}
+	.start-btn {
+		z-index: 10;
+		background: transparent;
+		font-family: $main-font;
+		font-size: 1.2rem;
+		margin-top: 1.8em;
+		border: 1px solid #f0e8ce;
+		a {
+			text-decoration: none;
+			color: $white;
+		}
+	}
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto; // border: 1px solid black;
+	}
+}
+// TIMELINE STYLING
+.reasons-timeline {
+	padding: 50px 10px;
+	background-image: url(/images/balloons.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.timeline {
+	min-width: 300px;
+	max-width: 500px;
+	margin: auto;
+}
+.timeline p {
+	font-size: 1em;
+	line-height: 1.75em;
+	border-top: 3px solid;
+	border-image: linear-gradient(to right, #698e9e, #318eadb7, #043144);
+	border-image-slice: 1;
+	border-width: 3px;
+	margin: 0;
+	padding: 40px;
+	counter-increment: section;
+	position: relative;
+	color: $black; // numbers
+	&:before {
+		content: counter(section);
+		position: absolute;
+		border-radius: 50%;
+		padding: 20px;
+		height: 1.50em;
+		width: 1.50em;
+		background-color: $black;
+	}
+}
+// odd number borders
+.timeline p:nth-child(odd) {
+	border-right: 3px solid;
+	padding-left: 0;
+	&:before {
+		left: 100%;
+		margin-left: -20px;
+	}
+}
+// even number borders
+.timeline p:nth-child(even) {
+	border-left: 3px solid;
+	padding-right: 0;
+	&:before {
+		right: 100%;
+		margin-right: -20px;
+	}
+}
+// handle first and last
+.timeline p:first-child {
+	border-top: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+.timeline p:last-child {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+// END OF TIMELINE STYLING
+// ====================================
+// MEMORIES SLIDE
+.memories-slide {
+	padding: 50px 0;
+	background: #0f2027; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#2c5364,
+		#203a43,
+		#0f2027
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 100vh;
+	color: $white;
+}
+.photos {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 70%;
+	width: 70%;
+	.photo {
+		height: 100%;
+		max-width: 100%;
+	}
+	img {
+		object-fit: contain;
+		object-position: center;
+	}
+}
+// COUPON CARDS SECTION
+.coupons {
+	padding: 50px 0;
+	.coupon-description {
+		text-align: center;
+		font-size: 1.2rem;
+		margin-bottom: 2.5em;
+	}
+}
+.breakfast {
+	opacity: 0.5;
+	text-decoration: line-through;
+}
+.cv {
+	background: #0f2027;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+	border: none;
+	a {
+		text-decoration: none;
+		color: $white;
+	}
+}
+.card {
+	box-shadow: 4px 2px 18px -5px rgba(0, 0, 0, 0.46);
+	&:hover {
+		transform: scale(1.05);
+		transition: 0.5s;
+		cursor: pointer;
+	}
+}
+.btn-card {
+	text-align: center;
+	padding: 20px 0;
+	.card-button {
+		background: #0f2027; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+		border: none;
+	}
+}
+.result {
+	font-size: 1.1rem;
+	color: #0f2027;
+}
+.cards-slides {
+	padding: 50px 0;
+}
+.controls-top {
+	text-align: center;
+	margin-bottom: -1em;
+}
+.control-button {
+	font-size: 2.5rem;
+	color: #0f2027; /* fallback for old browsers */
+}
+.carousel-indicators li {
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+}
+.cards-indicators li {
+	background-color: #0f2027;
+}
+// ===================================================
+// ===================================================
+// BIRTHDAY MESSAGES
+.b-messages {
+	padding: 50px 0;
+	background: #0f2027; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#2c5364,
+		#203a43,
+		#0f2027
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 100vh;
+	color: $white;
+}
+// Comment SEction
+.msg-btn {
+	text-align: center;
+	color: $white;
+	padding-bottom: 30px;
+	.btn {
+		color: $white;
+		background-color: transparent;
+		border: 1px solid #f0e8ce;
+		&:hover {
+			transform: scale(1.05);
+			transition: 0.5s;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: #f0e8ce;
+	}
+}
+.message-box {
+	width: 70%;
+	height: 60%;
+	top: 0;
+	left: 0;
+	border: 1px solid $white;
+	border-radius: 5px;
+	overflow: auto;
+	-webkit-box-shadow: 10px 15px 35px -9px rgba(134, 134, 134, 0.31);
+	-moz-box-shadow: 10px 15px 35px -9px rgba(240, 240, 240, 0.31);
+	box-shadow: 10px 15px 35px -9px rgba(236, 230, 195, 0.31);
+	padding: 20px;
+}
+.msg {
+	font-size: 1.2rem;
+	color: #f0e8ce;
+}
+.author {
+	font-size: 0.8rem;
+	font-style: italic;
+}
+.date {
+	font-size: 0.6rem;
+}
+// New Comments
+.msg-container {
+	padding-top: 30px;
+	h3 {
+		font-size: 2.5rem;
+	}
+}
+.new-message {
+	button {
+		background: #0f2027; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+		border: none;
+	}
+}
+.msg-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	label {
+		font-weight: 600;
+	}
+}
+.form-control {
+	margin: 10px;
+}
+// footer
+.footer {
+	background: rgb(240, 232, 206);
+	background: linear-gradient(
+		90deg,
+		rgba(240, 232, 206, 1) 5%,
+		rgba(186, 167, 60, 0.2361987031140581) 85%
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-top: 10px;
+		font-size: 0.9rem;
+	}
+	.heart {
+		color: purple;
+		font-size: 1.3rem;
+	}
+	a {
+		color: $black;
+		font-weight: 500;
+	}
+}

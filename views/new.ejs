@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+
+<div class="row justify-content-center msg-container">
+    <div class="col-md-12 text-center">
+        <h3 class="animate__animated animate__slideInUp">New Message for Kamil</h3>
+    </div>        
+<!-- New Comment Form -->
+    <div class="col-xs-12 col-md-6 col-lg-4 msg-form">
+        <form class="new-message" action="/home#messages" method="POST">
+            <div class="form-group">
+                <div>
+                    <img class="mb-4" src="/images/happy-birthday.png" alt="" width="150" height="72">
+                </div>    
+                <div class="username">
+                    <label for="username">
+                        Name:
+                        <input class="form-control" id="username" type="text" name="message[name]" placeholder="Enter your name" required>
+                    </label>
+                </div>
+                <div class="textarea">
+                    <label for="message">
+                        Your message:
+                        <div class="msg-box">
+                            <textarea class="form-control" name="message[body]" id="message" cols="30" rows="10" required></textarea>
+                        </div>    
+                    </label>
+                </div>
+            </div>    
+            <button  type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
