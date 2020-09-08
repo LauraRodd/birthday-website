@@ -5,9 +5,22 @@ const bodyParser = require('body-parser'),
 	express = require('express'),
 	app = express();
 
-// APP CONFIG
+// CONNECT TO SERVER
+mongoose
+	.connect(process.env.DATABASEURL, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	})
+	.then(() => {
+		console.log('Connected to DB');
+	})
+	.catch((err) => {
+		console.log('ERROR:', err.message);
+	});
 
-mongoose.connect('mongodb://localhost/bday_v3', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost/bday_v3', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// APP CONFIG
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
